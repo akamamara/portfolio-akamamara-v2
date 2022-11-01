@@ -1,0 +1,17 @@
+.self {
+	font-family: "Outfit", sans-serif;
+
+	@apply sticky top-0 left-0 mx-auto container w-full flex flex-row justify-between mb-[2.5vh] z-50 text-[1.25rem] pt-[4.5vh];
+}
+
+.logo {
+	color: #262626;
+	text-shadow: -3px -3px 0 #6b993d, 0 -3px 0 #6b993d, 3px -3px 0 #6b993d,
+		3px 0 0 #6b993d, 3px 3px 0 #6b993d, 0 3px 0 #6b993d, -3px 3px 0 #6b993d,
+		-3px 0 0 #6b993d;
+	@apply font-bold opacity-80 leading-none tracking-[0.145em];
+}
+
+.nav {
+	@apply flex flex-row space-x-6 text-white opacity-80;
+}

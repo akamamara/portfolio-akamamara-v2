@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* h1, h2, h3 {
+  font-family: 'Purple Purse', cursive;
+}
+
+p, article, span {
+  font-family: 'Outfit', sans-serif;
+} */
+
+html,
+body {
+	background: #262626;
+}
+
+main {
+	@apply container mx-auto pt-[2.5vh];
+}
+
+#__next {
+	@apply relative min-h-[95vh];
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	@apply hover:underline;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: black;
+	}
+}
