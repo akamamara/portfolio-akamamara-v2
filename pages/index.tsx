@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import {
 	FastArrowRight,
 	GitHub,
@@ -5,18 +7,24 @@ import {
 	LinkedIn,
 	Twitter,
 } from "iconoir-react";
+import BubbleMid from "../components/BubbleMid/BubbleMid";
+import HomeBubble from "../components/HomeBubble/HomeBubble";
 import Navbar from "../components/Navbar/Navbar";
 import Heading from "../components/Typography/Heading/Heading";
 import headingCss from "../components/Typography/Heading/Heading.styles";
 import HighlightText from "../components/Typography/Highlight/Highlight";
 import TextBody from "../components/Typography/TextBody/TextBody";
 import themes from "../constants/themes";
+import HomePageGreetings from "../sections/HomePage/HomePage.Greetings";
 
 export default function Home() {
 	return (
 		<>
 			<Navbar />
-			<main className="absolute inset-0 mx-auto w-fit max-w-[70vw] h-full flex flex-col justify-center pb-[2.5vh] z-0">
+			<HomeBubble />
+			<BubbleMid />
+			<div className="flex-grow" />
+			<main>
 				<Heading type="h1">
 					Hey, I&apos;m
 					<HighlightText>
@@ -65,6 +73,7 @@ export default function Home() {
 					</div>
 				</div>
 			</main>
+			<div className="flex-grow" />
 		</>
 	);
 }
