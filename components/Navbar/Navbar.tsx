@@ -7,7 +7,7 @@ export default function Navbar() {
 	const menu = useMemo(() => {
 		const menuNavbar = ["About", "Projects", "Resume", "Contact"];
 		return menuNavbar.map((item) => (
-			<Link href={"/" + item} key={item}>
+			<Link href={"/" + item.toLowerCase()} key={item}>
 				<li key={item}>{item}</li>
 			</Link>
 		));
