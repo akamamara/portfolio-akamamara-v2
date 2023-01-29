@@ -12,15 +12,17 @@ p, article, span {
 
 html,
 body {
-	background: #262626;
+	background-color: #262626;
 }
 
 main {
-	@apply container mx-auto pt-[2.5vh];
+	@apply z-10 relative -top-[2vw] container mx-auto pt-[2.5vh] w-fit max-w-[70vw] h-full flex flex-col flex-grow justify-center pb-[2.5vh] z-0;
 }
 
 #__next {
-	@apply relative min-h-[95vh];
+	background-image: url("/bg-noise.svg");
+	background-repeat: repeat;
+	@apply relative flex flex-col w-full justify-center min-h-screen;
 }
 
 a {
@@ -33,12 +35,3 @@ a {
 	box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-	body {
-		color: white;
-		background: black;
-	}
-}
