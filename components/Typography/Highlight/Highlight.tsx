@@ -3,12 +3,17 @@ import { ReactNode } from "react";
 import highlightCss from "./Highlight.styles";
 
 interface HighlightProps {
+	element: "span" | "b" | "strong" | "em" | "i";
 	children: ReactNode;
 }
 
-export default function HighlightText({ children, ...props }: HighlightProps) {
+export default function HighlightText({
+	element = "span",
+	children,
+	...props
+}: HighlightProps) {
 	return jsx(
-		"span",
+		element,
 		{
 			css: highlightCss.self,
 			...props,

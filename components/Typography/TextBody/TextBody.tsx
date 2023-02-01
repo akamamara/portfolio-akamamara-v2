@@ -1,28 +1,24 @@
 /** @jsxImportSource @emotion/react */
-import { jsx } from "@emotion/react";
+import { css as cssEmotion, jsx } from "@emotion/react";
 import { ReactNode } from "react";
 import textBodyCss from "./TextBody.styles";
 
-const element = {
-	p: "p",
-	article: "article",
-	span: "span",
-};
-
-interface BodyProps {
-	type?: "p" | "article" | "span";
+interface BodyProps extends JSX.IntrinsicAttributes {
+	type?: "p" | "article" | "span" | "b" | "i" | "strong" | "em";
 	children: ReactNode;
+	css?: any;
 }
 
 export default function TextBody({
 	type = "p",
 	children,
+	css,
 	...rest
-}: BodyProps & JSX.IntrinsicAttributes) {
+}: BodyProps) {
 	return jsx(
-		element[type],
+		type,
 		{
-			css: textBodyCss.self,
+			css: cssEmotion([css, textBodyCss.self]),
 			...rest,
 		},
 		children
