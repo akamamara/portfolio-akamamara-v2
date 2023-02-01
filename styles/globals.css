@@ -13,10 +13,11 @@ p, article, span {
 html,
 body {
 	background-color: #262626;
+	color: #a5a5a5;
 }
 
 main {
-	@apply z-10 relative -top-[2vw] container mx-auto pt-[2.5vh] w-fit max-w-[70vw] h-full flex flex-col flex-grow justify-center pb-[2.5vh] z-0;
+	@apply z-10 container mx-auto w-fit max-w-[80vw] h-full flex flex-col flex-grow justify-center;
 }
 
 #__next {
@@ -34,4 +35,3 @@ a {
 * {
 	box-sizing: border-box;
 }
-
