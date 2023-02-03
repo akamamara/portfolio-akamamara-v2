@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import Image from "next/image";
 import BubbleMid from "../../components/BubbleMid/BubbleMid";
 import HomeBubble from "../../components/HomeBubble/HomeBubble";
 import Navbar from "../../components/Navbar/Navbar";
@@ -16,15 +17,18 @@ export default function ProjectPage() {
 			<Navbar />
 			<HomeBubble />
 			<BubbleMid top />
-			<main css={{ paddingTop: "10vh", width: "80vw" }}>
-				<ProjectPageGreetings />
+			<ProjectPageGreetings />
+			<main
+				css={{ position: "relative", width: "80vw", paddingBottom: "10vh" }}
+			>
+				<div css={{ marginTop: "10vh", marginBottom: "1.25rem" }}>
+					<TextBody css={[textBodyCss.small, { opacity: 0.6 }]}>
+						My Journey, so far…
+					</TextBody>
+					<Heading>My Projects</Heading>
+				</div>
+
 				<TextBody css={[textBodyCss.small, { opacity: 0.6 }]}>
-					My Journey, so far…
-				</TextBody>
-				<Heading>My Projects</Heading>
-				<TextBody
-					css={[textBodyCss.small, { opacity: 0.6, marginTop: "1.25rem" }]}
-				>
 					Fetured projects
 				</TextBody>
 				<div
@@ -34,7 +38,7 @@ export default function ProjectPage() {
 						width: "80vw",
 					}}
 				>
-					<img
+					<Image
 						src="/showcase/famlink-logo.png"
 						alt="FamLink Logo"
 						css={{
@@ -44,25 +48,29 @@ export default function ProjectPage() {
 							zIndex: 50,
 							width: "6rem",
 						}}
+						width={96}
+						height={96}
 					/>
-					<img
+					<Image
 						css={{
 							position: "absolute",
 							top: 0,
 							left: 0,
 							zIndex: 30,
-							width: "60vw",
+							width: "55vw",
 							mixBlendMode: "luminosity",
 							opacity: 0.6,
 						}}
 						src="/showcase/overlay-projects.svg"
 						alt=""
+						width={96}
+						height={96}
 					/>
 					<picture>
 						<source src="/showcase/famlink-projects.png" type="image/png" />
 						<source
 							css={{
-								width: "60vw",
+								width: "55vw",
 								mixBlendMode: "luminosity",
 							}}
 							src="/showcase/famlink-projects.webp"
@@ -70,7 +78,7 @@ export default function ProjectPage() {
 						/>
 						<img
 							css={{
-								width: "60vw",
+								width: "55vw",
 								mixBlendMode: "luminosity",
 							}}
 							src="/showcase/famlink-projects.webp"
@@ -119,6 +127,42 @@ export default function ProjectPage() {
 					</div>
 				</div>
 
+				{/* <div>
+					<TextBody css={textBodyCss.small} css={{ opacity: 0.6 }}>
+						Scroll for
+						<br />
+						more projects
+					</TextBody>
+				</div> */}
+
+				<div css={{ marginTop: "10vh", marginBottom: "3rem" }}>
+					<TextBody css={{ opacity: 1 }} type="b">
+						The Rest of it...
+					</TextBody>
+					<div css={{ display: "flex", marginTop: "0.5rem" }}>
+						<TextBody
+							css={[textBodyCss.small, { opacity: 0.6, marginRight: "3rem" }]}
+						>
+							Filter By
+						</TextBody>
+						<div css={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+							{[
+								"All",
+								"Web Development",
+								"UI/UX Design",
+								"Mobile Development",
+							].map((item) => (
+								<TextBody
+									css={[textBodyCss.small, { opacity: 0.6 }]}
+									key={item}
+								>
+									{`${item} (xx)`}
+								</TextBody>
+							))}
+						</div>
+					</div>
+				</div>
+
 				<div
 					style={{
 						display: "grid",
@@ -144,14 +188,6 @@ export default function ProjectPage() {
 							);
 						})}
 				</div>
-
-				{/* <div>
-					<TextBody css={textBodyCss.small} css={{ opacity: 0.6 }}>
-						Scroll for
-						<br />
-						more projects
-					</TextBody>
-				</div> */}
 			</main>
 		</>
 	);
