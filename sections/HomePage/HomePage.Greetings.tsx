@@ -4,7 +4,7 @@ import Heading from "../../components/Typography/Heading/Heading";
 const TextData = () => {
 	return (
 		<span
-			style={{
+			css={{
 				letterSpacing: "-0.06em",
 				fontSize: "13vw",
 				opacity: 0.06,
@@ -19,7 +19,7 @@ const TextData = () => {
 export default function HomePageGreetings() {
 	return (
 		<div
-			style={{
+			css={{
 				position: "absolute",
 				bottom: 0,
 				left: "-4vw",
