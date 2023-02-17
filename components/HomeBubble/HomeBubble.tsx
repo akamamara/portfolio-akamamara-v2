@@ -1,10 +1,10 @@
 import { css, jsx } from "@emotion/react";
 
-export default function HomeBubble() {
+export default function HomeBubble({ zIndex = 0 }) {
 	return jsx("div", {
 		css: css({
 			position: "absolute",
-			zIndex: 0,
+			zIndex: zIndex,
 			left: 0,
 			top: 0,
 			width: "96vw",

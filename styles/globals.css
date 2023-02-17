@@ -23,7 +23,7 @@ main {
 #__next {
 	background-image: url("/bg-noise.svg");
 	background-repeat: repeat;
-	@apply relative flex flex-col w-full justify-center min-h-screen;
+	@apply relative flex flex-col w-full items-center min-h-screen overflow-x-clip;
 }
 
 a {

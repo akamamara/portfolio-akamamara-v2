@@ -1,7 +1,7 @@
 .self {
 	font-family: "Outfit", sans-serif;
 
-	@apply sticky top-0 left-0 mx-auto container w-full flex flex-row justify-between mb-[2.5vh] z-50 text-[1.25rem] pt-[4.5vh];
+	@apply sticky top-0 left-0 mx-auto container w-screen flex flex-row justify-between items-center mb-[2.5vh] z-50 text-[1.25rem] pt-[4.5vh] p-8;
 }
 
 .logo {
@@ -9,7 +9,7 @@
 	text-shadow: -3px -3px 0 #6b993d, 0 -3px 0 #6b993d, 3px -3px 0 #6b993d,
 		3px 0 0 #6b993d, 3px 3px 0 #6b993d, 0 3px 0 #6b993d, -3px 3px 0 #6b993d,
 		-3px 0 0 #6b993d;
-	@apply font-bold opacity-80 leading-none tracking-[0.145em];
+	@apply font-bold opacity-80 leading-none tracking-[0.145em] !no-underline;
 }
 
 .nav {
