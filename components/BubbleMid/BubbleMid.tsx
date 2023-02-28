@@ -1,4 +1,5 @@
 import { css, jsx } from "@emotion/react";
+import { mq } from "../../constants/themes";
 
 export default function BubbleMid({ top = false }) {
 	return jsx("div", {
@@ -6,16 +7,21 @@ export default function BubbleMid({ top = false }) {
 			position: "absolute",
 			zIndex: top ? 100 : 0,
 			right: "0",
-			top: "20vh",
-			width: "50vw",
-			height: "35vw",
+			top: "32vh",
+			width: "50vh",
+			height: "35vh",
+			backgroundPositionX: "20vh",
 			backgroundImage: 'url("/dec-1.svg")',
 			backgroundRepeat: "space",
 			backgroundSize: "contain",
-			backgroundPositionX: "20vw",
 			mixBlendMode: "luminosity",
-			backgroundPositionY: "0",
 			rotate: "revert",
+			[mq[2]]: {
+				top: "20vh",
+				width: "50vw",
+				height: "35vw",
+				backgroundPositionX: "20vw",
+			},
 		}),
 	});
 }
