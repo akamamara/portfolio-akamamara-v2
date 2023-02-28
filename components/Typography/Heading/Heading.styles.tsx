@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import themes from "../../../constants/themes";
+import themes, { mq } from "../../../constants/themes";
 
 const headingCss = {
 	self: css({
@@ -12,24 +12,28 @@ const headingCss = {
 		color: themes.pallete.primary.main,
 	}),
 	h1: css({
-		fontSize: "2.75rem",
+		fontSize: "2.5rem",
+		lineHeight: "1.2",
 		letterSpacing: "-0.01em",
+		[mq[0]]: {
+			fontSize: "2.75rem",
+		},
 	}),
-	h2: css({
-		fontSize: "2.75rem",
-	}),
-	h3: css({
-		fontSize: "2.75rem",
-	}),
-	h4: css({
-		fontSize: "2.75rem",
-	}),
-	h5: css({
-		fontSize: "2.75rem",
-	}),
-	h6: css({
-		fontSize: "2.75rem",
-	}),
+	// h2: css({
+	// 	fontSize: "2.75rem",
+	// }),
+	// h3: css({
+	// 	fontSize: "2.75rem",
+	// }),
+	// h4: css({
+	// 	fontSize: "2.75rem",
+	// }),
+	// h5: css({
+	// 	fontSize: "2.75rem",
+	// }),
+	// h6: css({
+	// 	fontSize: "2.75rem",
+	// }),
 };
 
 export default headingCss;
