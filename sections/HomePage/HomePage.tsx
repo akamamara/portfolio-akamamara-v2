@@ -38,7 +38,7 @@ export default function HomePage() {
 						<span>akamamara</span>
 					</HighlightText>
 				</Heading>
-				<TextBody>
+				<TextBody css={{ marginTop: "1rem" }}>
 					Nice to meet you! I&apos;m a
 					<HighlightText element="b"> front-end web developer </HighlightText>
 					and <HighlightText element="b">UI Designer </HighlightText>
