@@ -28,7 +28,7 @@ export default function HomePageGreetings() {
 				bottom: "20vh",
 				left: "-4vw",
 				userSelect: "none",
-				zIndex: 10,
+				zIndex: 0,
 				[mq[1]]: {
 					bottom: "1vh",
 					fontSize: "13vw",

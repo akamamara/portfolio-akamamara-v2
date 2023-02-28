@@ -16,6 +16,7 @@ import TextBody from "../../components/Typography/TextBody/TextBody";
 import homePageCss from "./HomePage.style";
 import HomePageGreetings from "./HomePage.Greetings";
 import styles from "./HomePage.module.css";
+import Link from "next/link";
 
 export default function HomePage() {
 	return (
@@ -23,7 +24,7 @@ export default function HomePage() {
 			<Navbar />
 			<HomeBubble />
 			<BubbleMid />
-			<main css={{ width: "68vw" }}>
+			<main css={{ width: "68vw", zIndex: 1 }}>
 				<Heading type="h1">
 					Hey, I&apos;m
 					<HighlightText element="span">
@@ -45,24 +46,32 @@ export default function HomePage() {
 					enthusiast, practicing minimalism, and hard rocking work! ✊🏼
 				</TextBody>
 				<div>
-					<button css={homePageCss.seeMoreProject}>
+					<Link href="/projects" css={homePageCss.seeMoreProject}>
 						<FastArrowRight />
 						<TextBody>
 							<b>See more my projects</b>
 						</TextBody>
-					</button>
+					</Link>
 					<div css={homePageCss.listContact}>
 						<button>
-							<Twitter />
+							<Link href="https://twitter.com/aldi_oktavia10">
+								<Twitter />
+							</Link>
 						</button>
 						<button>
-							<Instagram />
+							<Link href="https://instagram.com/21alavia">
+								<Instagram />
+							</Link>
 						</button>
 						<button>
-							<LinkedIn />
+							<Link href="https://linkedin.com/in/aldi-oktaviana-hidayat">
+								<LinkedIn />
+							</Link>
 						</button>
 						<button>
-							<GitHub />
+							<Link href="https://github.com/akamamara">
+								<GitHub />
+							</Link>
 						</button>
 					</div>
 				</div>
