@@ -1,9 +1,21 @@
+import { MenuScale } from "iconoir-react";
 import Link from "next/link";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
-	console.log(styles.nav);
+	const [menuClicked, setMenuClicked] = useState(false);
+	const [menuClasses, setMenuClasses] = useState(
+		`hidden md:block ${styles.nav}`
+	);
+	useEffect(() => {
+		if (menuClicked)
+			setMenuClasses(
+				`absolute top-0 right-0 flex flex-col sm:flex-row sm:relative ${styles.nav}`
+			);
+		else setMenuClasses(`hidden sm:flex flex-col sm:flex-row ${styles.nav}`);
+	}, [menuClicked]);
+
 	const menu = useMemo(() => {
 		const menuNavbar = ["About", "Projects", "Resume", "Contact"];
 		return menuNavbar.map((item) => (
@@ -13,13 +25,18 @@ export default function Navbar() {
 		));
 	}, []);
 
+	const onClickMenu = () => setMenuClicked(!menuClicked);
+
 	return (
 		<nav className={styles.self}>
-			<button type="button" className={styles.logo}>
+			<Link className={styles.logo} href="/">
 				akamamara
-			</button>
+			</Link>
 			<div className="flex-grow" />
-			<ul className={styles.nav}>{menu}</ul>
+			<button onClick={onClickMenu} className="z-50 sm:hidden">
+				<MenuScale style={{ transform: "matrix(1, 0, 0, -1, 0, 0)" }} />
+			</button>
+			<ul className={menuClasses}>{menu}</ul>
 		</nav>
 	);
 }
