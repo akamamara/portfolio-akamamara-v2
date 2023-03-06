@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Heading from "../../components/Typography/Heading/Heading";
 import TextBody from "../../components/Typography/TextBody/TextBody";
 import textBodyCss from "../../components/Typography/TextBody/TextBody.styles";
+import { mq } from "../../constants/themes";
 import ProjectPageCard from "./ProjectPage.Card";
 import ProjectPageGreetings from "./ProjectPage.Greetings";
 
@@ -46,7 +47,10 @@ export default function ProjectPage() {
 							top: 0,
 							left: 0,
 							zIndex: 50,
-							width: "6rem",
+							width: "5rem",
+							[mq[2]]: {
+								width: "6rem",
+							},
 						}}
 						width={96}
 						height={96}
@@ -56,10 +60,13 @@ export default function ProjectPage() {
 							position: "absolute",
 							top: 0,
 							left: 0,
-							zIndex: 30,
-							width: "55vw",
+							zIndex: 1,
+							width: "110vw",
 							mixBlendMode: "luminosity",
 							opacity: 0.6,
+							[mq[2]]: {
+								width: "62vw",
+							},
 						}}
 						src="/showcase/overlay-projects.svg"
 						alt=""
@@ -70,16 +77,24 @@ export default function ProjectPage() {
 						<source src="/showcase/famlink-projects.png" type="image/png" />
 						<source
 							css={{
-								width: "55vw",
+								width: "110vw",
+								zIndex: 0,
 								mixBlendMode: "luminosity",
+								[mq[2]]: {
+									width: "62vw",
+								},
 							}}
 							src="/showcase/famlink-projects.webp"
 							type="image/webp"
 						/>
 						<img
 							css={{
-								width: "55vw",
+								width: "110vw",
+								zIndex: 0,
 								mixBlendMode: "luminosity",
+								[mq[2]]: {
+									width: "62vw",
+								},
 							}}
 							src="/showcase/famlink-projects.webp"
 							alt="Portrait of Aldi Oktaviana Hidayat"
@@ -88,11 +103,13 @@ export default function ProjectPage() {
 
 					<div
 						css={{
-							width: "26rem",
-							position: "absolute",
-							right: 0,
-							bottom: "6vw",
-							zIndex: 150,
+							[mq[2]]: {
+								width: "26rem",
+								position: "absolute",
+								right: 0,
+								bottom: "6vw",
+								zIndex: 150,
+							},
 						}}
 					>
 						<TextBody css={{ opacity: 0.6 }}>
@@ -139,13 +156,31 @@ export default function ProjectPage() {
 					<TextBody css={{ opacity: 1 }} type="b">
 						The Rest of it...
 					</TextBody>
-					<div css={{ display: "flex", marginTop: "0.5rem" }}>
-						<TextBody
-							css={[textBodyCss.small, { opacity: 0.6, marginRight: "3rem" }]}
-						>
+					<div
+						css={{
+							display: "flex",
+							gap: "0.5rem",
+							flexDirection: "column",
+							marginTop: "0.5rem",
+							[mq[1]]: {
+								flexDirection: "row",
+								gap: "3rem",
+							},
+						}}
+					>
+						<TextBody css={[textBodyCss.small, { opacity: 0.6 }]}>
 							Filter By
 						</TextBody>
-						<div css={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+						<div
+							css={{
+								display: "flex",
+								flexDirection: "column",
+								[mq[1]]: {
+									flexDirection: "row",
+									gap: "1rem",
+								},
+							}}
+						>
 							{[
 								"All",
 								"Web Development",
@@ -166,8 +201,8 @@ export default function ProjectPage() {
 				<div
 					style={{
 						display: "grid",
-						gridTemplateColumns: "repeat(5, 1fr)",
-						rowGap: "3rem",
+						gridTemplateColumns: "repeat(auto-fit, minmax(11.75rem, 2fr))",
+						rowGap: "2rem",
 						columnGap: "1.25rem",
 					}}
 				>

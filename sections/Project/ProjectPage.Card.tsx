@@ -20,7 +20,7 @@ export default function ProjectPageCard({ type, title, stack }: Props) {
 				}}
 			/>
 			<div css={{ marginTop: "1rem" }}>
-				<TextBody css={{ fontSize: "0.875rem" }}>{type}</TextBody>
+				<TextBody css={{ fontSize: "0.875rem !important" }}>{type}</TextBody>
 				<TextBody css={{ color: "#FAFAFA", opacity: 1 }}>
 					<b>{title}</b>
 				</TextBody>
