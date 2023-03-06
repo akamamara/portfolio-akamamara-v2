@@ -16,7 +16,7 @@ const defaultCss = {
 const textBodyCss = {
 	default: defaultCss,
 	self: css({ ...defaultCss }),
-	small: css({ ...defaultCss, fontSize: "1rem" }),
+	small: css([defaultCss, { fontSize: "1rem !important" }]),
 };
 
 export default textBodyCss;

@@ -5,7 +5,7 @@ export default function BubbleMid({ top = false }) {
 	return jsx("div", {
 		css: css({
 			position: "absolute",
-			zIndex: top ? 100 : 0,
+			zIndex: top ? 50 : 0,
 			right: "0",
 			top: "32vh",
 			width: "50vh",
