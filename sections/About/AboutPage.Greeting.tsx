@@ -1,4 +1,5 @@
 import Heading from "../../components/Typography/Heading/Heading";
+import { mq } from "../../constants/themes";
 
 export default function AboutPageGreeting() {
 	return (
@@ -10,9 +11,12 @@ export default function AboutPageGreeting() {
 				userSelect: "none",
 				zIndex: 100,
 				letterSpacing: "-0.06em",
-				fontSize: "8vw",
+				fontSize: "12vw",
 				opacity: 0.06,
 				color: "#CCF5A3",
+				[mq[0]]: {
+					fontSize: "8vw !important",
+				},
 			}}
 		>
 			akamamara

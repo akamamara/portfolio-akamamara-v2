@@ -1,7 +1,14 @@
 import { css } from "@emotion/react";
 
+const helper = {
+	topLeftPosition: {
+		left: 0,
+		top: 0,
+	},
+};
+
 const aboutPageStyle = {
-	main: css({
+	mainLandscape: css({
 		position: "relative",
 		right: "-25%",
 		top: 0,
@@ -13,14 +20,32 @@ const aboutPageStyle = {
 		width: "100%",
 		maxWidth: "50vw",
 	}),
-	fixedPosition: {
-		position: "fixed",
-		left: 0,
-		top: 0,
-	},
+	mainPortrait: css([
+		helper.topLeftPosition,
+		{
+			marginTop: "-10rem",
+			display: "flex",
+			flexGrow: 0,
+			alignItems: "center",
+			justifyContent: "flex-start",
+			maxWidth: "100vw",
+			height: "min-content",
+		},
+	]),
+	fixedPosition: css([
+		helper.topLeftPosition,
+		{
+			position: "fixed",
+		},
+	]),
+	absolutePosition: css([helper.topLeftPosition, { position: "absolute" }]),
 	pictureSize: {
 		width: "47.5vw",
 		height: "100vh",
+	},
+	picturePortrait: {
+		width: "100vw",
+		height: "26rem",
 	},
 	overlayAboutMe: css({
 		zIndex: 5,
@@ -34,7 +59,6 @@ const aboutPageStyle = {
 		position: "fixed",
 		bottom: 0,
 		right: 0,
-		width: "52%",
 		height: "42vh",
 		background:
 			"linear-gradient(177.71deg, rgba(38, 38, 38, 0) 5.67%, rgba(38, 38, 38, 0.98) 60%)",

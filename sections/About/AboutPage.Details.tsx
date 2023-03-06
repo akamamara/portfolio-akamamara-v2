@@ -45,7 +45,13 @@ export default function AboutPageDetails({
 					},
 				}}
 			>
-				<Heading css={{ position: "relative", top: -4, fontSize: "1.83rem" }}>
+				<Heading
+					css={{
+						position: "relative",
+						top: -4,
+						fontSize: "1.83rem !important",
+					}}
+				>
 					{title}
 				</Heading>
 				<TextBody css={{ marginTop: "0.375rem" }}>{children}</TextBody>
