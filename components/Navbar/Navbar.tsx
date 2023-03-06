@@ -17,10 +17,21 @@ export default function Navbar() {
 	}, [menuClicked]);
 
 	const menu = useMemo(() => {
-		const menuNavbar = ["About", "Projects", "Resume", "Contact"];
+		const menuNavbar = [
+			{ name: "About", link: "/about" },
+			{ name: "Projects", link: "/projects" },
+			{
+				name: "Resume",
+				link: "https://drive.google.com/file/d/1_SEuk7wVw4jJB_XTv79pmRj15YCqfsfQ/view?usp=sharing",
+			},
+			{
+				name: "Contact",
+				link: "mailto:aldiokta10@hotmail.co.id?subject=Contact from Portfolio",
+			},
+		];
 		return menuNavbar.map((item) => (
-			<Link href={"/" + item.toLowerCase()} key={item}>
-				<li key={item}>{item}</li>
+			<Link href={item.link} key={item.name}>
+				<li key={item.name}>{item.name}</li>
 			</Link>
 		));
 	}, []);
