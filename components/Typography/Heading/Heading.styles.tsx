@@ -16,7 +16,7 @@ const headingCss = {
 		lineHeight: "1.2",
 		letterSpacing: "-0.01em",
 		[mq[0]]: {
-			fontSize: "2.75rem",
+			fontSize: "2.75rem !important",
 		},
 	}),
 	// h2: css({
