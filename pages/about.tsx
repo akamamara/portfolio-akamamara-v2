@@ -1,5 +1,12 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import AboutPage from "../sections/About/AboutPage";
+
+const AboutPage = dynamic(
+	() => {
+		return import("../sections/About/AboutPage");
+	},
+	{ ssr: false }
+);
 
 export default function About() {
 	return <AboutPage />;
